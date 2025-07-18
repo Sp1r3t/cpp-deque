@@ -4,7 +4,6 @@
 
 #include <QMessageBox>
 #include <QFileDialog>
-#include <QFile>
 #include <QTextStream>
 #include <algorithm>
 #include <string>
@@ -127,11 +126,7 @@ void MainWindow::on_btn_merge_sort_clicked() {
         return;
     }
 
-    auto comparator = [](const std::string &a, const std::string &b) {
-        return a < b;
-    };
-
-    deque_model_.items = MergeSort<>(deque_model_.items, comparator);
+    deque_model_.items = MergeSort<>(deque_model_.items, std::less());
     deque_model_.iterator = deque_model_.items.begin();
 
     ApplyModel();
