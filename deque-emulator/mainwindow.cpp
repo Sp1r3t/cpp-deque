@@ -2,7 +2,6 @@
 #include "algo.h"
 #include "ui_mainwindow.h"
 
-#include <QMessageBox>
 #include <QFileDialog>
 #include <QTextStream>
 #include <algorithm>
